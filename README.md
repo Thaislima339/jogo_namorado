@@ -55,6 +55,6 @@ O QR Code da etapa final é carregado por um serviço externo e direciona para u
 
 ## 💖 Autoria
 
-Feito com carinho por **Thais**. ❤️
+Feito com carinho por **Thais**. 
 
-> “Se algum dia você olhar para o céu e se sentir perdido, olha de novo. Pois eu estarei olhando para o mesmo céu pensando em você.”
+ 
