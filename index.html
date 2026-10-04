@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NÃO DESISTA MEU AMOR</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<div id="sky"><div class="cloud one"></div><div class="cloud two"></div><div class="shooting"></div></div>
+<main>
+<section class="screen active" data-step="1">
+ <div class="card anime-hero">
+  <div class="eyebrow">✦ RPG ANIME · PRÓLOGO</div>
+  <div class="japanese">君と、あの空</div>
+  <h1>O céu nos encontrou.</h1>
+  <p>Em algum lugar entre duas cidades, duas pessoas olharam para o mesmo céu. Uma delas está cansada. A outra decidiu deixar uma mensagem.</p>
+  <div class="quest">🌙 <b>MISSÃO:</b> atravesse esta noite sem desistir de si mesmo.</div>
+  <div class="actions"><button class="btn" onclick="next()">▶ INICIAR AVENTURA</button></div>
+ </div>
+</section>
+<section class="screen" data-step="2">
+ <div class="card">
+  <div class="hud"><span>❤️ HP 72/100</span><span>⭐ LV. 01</span><span>🌙 NOITE 01</span></div>
+  <div class="progress"><i style="width:25%"></i></div>
+  <div class="eyebrow">CAPÍTULO 01 · VILA DAS EMOÇÕES</div>
+  <h2>Como o meu amor se sente?</h2>
+  <p>Escolha seu estado atual. Não existe resposta errada — sua escolha muda o diálogo.</p>
+  <div class="choice-grid">
+   <button class="choice" onclick="choose(this,'azul')"><b>🌧️ Azul</b><span>“Estou cansado e só queria silêncio.”</span></button>
+   <button class="choice" onclick="choose(this,'cinza')"><b>☁️ Cinza</b><span>“Não sei bem o que estou sentindo.”</span></button>
+   <button class="choice" onclick="choose(this,'vermelho')"><b>🔥 Vermelho</b><span>“Estou desânimado.”</span></button>
+   <button class="choice" onclick="choose(this,'roxo')"><b>🌌 Roxo</b><span>“Ainda tenho uma pontinha de esperança.”</span></button>
+  </div>
+  <div class="secret" id="choiceMsg"></div>
+  <div class="actions"><button class="btn" onclick="next()">ACEITAR MISSÃO →</button></div>
+ </div>
+</section>
+<section class="screen" data-step="3">
+ <div class="card">
+  <div class="hud"><span>❤️ HP <b id="hp">72</b>/100</span><span>⭐ XP <b id="xp">0</b>/100</span><span>☀️ MANHÃ</span></div>
+  <div class="progress"><i style="width:50%"></i></div>
+  <div class="eyebrow">CAPÍTULO 02 · O CAMPO DE ESTRELAS</div>
+  <h2>MISSÃO: encontre as 5 memórias.</h2>
+  <p>O céu está fragmentado. Cada estrela guarda uma mensagem. Clique nelas na ordem que seu coração escolher.</p>
+  <div id="constellation"></div>
+  <div class="secret" id="starMsg">⭐ 0/5 memórias encontradas</div>
+  <div class="actions"><button class="btn" id="continue3" onclick="next()" disabled>DESBLOQUEAR CAPÍTULO →</button></div>
+ </div>
+</section>
+<section class="screen" data-step="4">
+ <div class="card">
+  <div class="hud"><span>❤️ HP <b id="hp2">85</b>/100</span><span>⭐ XP 100/100</span><span>🌌 EVENTO ESPECIAL</span></div>
+  <div class="progress"><i style="width:75%"></i></div>
+  <div class="eyebrow">CAPÍTULO 03 · A VOZ DO OUTRO LADO</div>
+  <h2>Uma mensagem chegou até você.</h2>
+  <p>O personagem encontra uma carta que atravessou a distância. Ela não promete salvar o mundo. Só promete companhia.</p>
+  <div class="letter">Eu não prometo que vou conseguir consertar tudo que está doendo em você — porque eu sei que algumas batalhas são suas e só suas. 💙
+
+Mas eu prometo estar do seu lado enquanto você atravessa elas.
+
+Amor, eu sei que esse momento está sendo difícil, mas não quero que você se sinta insuficiente por isso. Eu vejo o quanto você está tentando e tenho muito orgulho de você. ❤️
+
+Você não precisa ter tudo resolvido agora. Essa fase vai passar, e eu acredito em você. Saiba que eu te acho um homem incrível, guerreiro e forte. Vai dar certo! Juntos, vamos vencer tudo. E eu sempre estarei aqui por você. 🥺❤️
+
+E, por favor, não esquece: existe alguém aqui que olha para você e pensa “eu quero que ele fique bem” todos os dias.</div>
+  <div class="actions"><button class="btn pink" onclick="next()">RESPONDER À CARTA 💗</button></div>
+ </div>
+</section>
+<section class="screen" data-step="5">
+ <div class="card">
+  <div class="hud"><span>🏆 QUEST COMPLETE</span><span>⭐ LV. 02</span><span>❤️ 100/100</span></div>
+  <div class="eyebrow">FINAL · O MESMO CÉU</div>
+  <div class="final-top"><h1 style="font-size:clamp(2.5rem,6vw,4.5rem)">Você chegou até aqui.</h1><div class="music-qr"><img src="qrcode.png" alt="QR Code - You and I, Scorpions"><span>🎵 Dê play para ouvir</span></div></div>
+  <p>Talvez a vida não tenha mudado em cinco minutos. Mas você mudou a minha vida, não desista meu camisa 10.</p>
+  <h2 style="color:#ffe5a3">E eu vou continuar ao seu lado. ✦</h2>
+  <p class="highlight" style="font-family:Georgia,serif;font-size:1.3rem">“Se algum dia você olhar para o céu e se sentir perdido, olha de novo. Pois eu estarei olhando para o mesmo céu pensando em você.”</p>
+  <div class="quest">🏆 <b>CONQUISTA DESBLOQUEADA:</b> “Não desistir até conseguir o que quiser.”</div>
+  <div class="actions"><button class="btn pink" onclick="heartRain()">ACEITAR MEU ABRAÇO 💗</button><button class="btn secondary" onclick="restart()">↺ JOGAR NOVAMENTE</button></div>
+  <div id="finalMsg" class="secret"></div>
+ </div>
+</section>
+</main>
+<div class="footer">feito com carinho por Thais, sua futura noiva❤️</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
